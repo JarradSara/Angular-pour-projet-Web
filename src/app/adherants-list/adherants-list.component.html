@@ -1,0 +1,48 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no book -->
+  <div class="no-data text-center" *ngIf="Adherant.length == 0">
+    <p>Il n'y a pas encore d'Adherants, ajoutez en un !</p>
+    <button class="btn btn-outline-primary" routerLink="/create-adherant">Ajouter un Adherant</button>
+  </div>
+
+  <!-- Books list table, it hides when there is no book -->
+  <div *ngIf="Adherant.length !== 0">
+    <h3 class="mb-3 text-center">Liste d'Adherants</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+           
+            <th scope="col">Nom </th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let adherant of Adherant">
+            
+            <td>{{adherant.nomAdherant}}</td>
+            <td>{{adherant.prenomAdherant}}</td>
+            <td>{{adherant.ageAdherant}}</td>
+            <td>{{adherant.emailAdherant}}</td>
+            <td>{{adherant.adresseAdherant}}</td>
+            <td>
+              <button class="btn btn-outline-primaryedit" routerLink="/adherant-edit/{{adherant.idAdherant}}">Modifier</button>
+               <button class="btn btn-outline-primaryedit" (click)="deleteAdherant(adherant.idAdherant)">Supprimer</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+

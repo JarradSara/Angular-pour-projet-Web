@@ -1,0 +1,43 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no book -->
+  <div class="no-data text-center" *ngIf="Book.length == 0">
+    <p>Il n'y a pas encore de livres !</p>
+    <button class="btn btn-outline-primary" routerLink="/create-book">Ajouter un Livre</button>
+  </div>
+
+  <!-- Books list table, it hides when there is no book -->
+  <div *ngIf="Book.length !== 0">
+    <h3 class="mb-3 text-center">Liste des Livres</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+           
+            <th scope="col">Nom d'Ouvrage</th>
+            <th scope="col">Nom d'Auteur</th>
+            <th scope="col">Numero d'Edition</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of Book">
+            
+            <td>{{book.nomOuvrage}}</td>
+            <td>{{book.nomAuteur}}</td>
+            <td>{{book.numEdition}}</td>
+            <td>
+              <button class="btn btn-outline-primaryedit" routerLink="/book-edit/{{book.codeBarre}}">Modifier</button>
+               <button class="btn btn-outline-primaryedit" (click)="deleteBook(book.codeBarre)">Supprimer</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+

@@ -1,0 +1,48 @@
+ 
+ <div align="center">
+ <section class="section">
+   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"></div>
+  <div class="columns is-centered">
+    <div class="column is-one-third">
+      
+      <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        
+        <div class="field">
+          
+          <label class="label">Email</label>
+          <input class="input"
+				 id="email"
+                 type="text"
+                 placeholder=" Email "
+                 formControlName="email">
+          
+                 
+        </div>
+        <div class="field">
+          <label class="label">Mot de passe</label>
+          <input class="input"
+                 type="password"
+                 placeholder=" Mot de Passe "
+                 formControlName="password">
+ 	   </div>
+        <button type="submit" style="background-color:LightGray;" border-color="#007bff;" class="button is-primary">Creer mon compte</button>
+     
+      </form>
+            
+	   <p class="text-danger">{{ errorMessage }}</p>
+    </div>
+  </div>
+
+</section>
+</div>
+
+
+
+
+
+
+ 
+
+
+
+

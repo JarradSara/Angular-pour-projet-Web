@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<ul class="nav navba-nav">
+			<li routerLinkActive="active">
+				<a class="btn btn-outline-primary" routerLink="/create-book" routerLinkActive="active">Livres</a>
+				<a class="btn btn-outline-primary" routerLink="/create-adherant" routerLinkActive="active">Adherants</a>
+				<a class="btn btn-outline-primary" routerLink="/create-pret" routerLinkActive="active">Prets</a>
+				<a class="btn btn-outline-primary" routerLink="/create-activite" routerLinkActive="active">Activites culturelles</a>
+			</li>	
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li routerLinkActive="/create-book" *ngIf="!isAuth">
+			<a class="btn btn-outline-primary" routerLink="auth/signup">Creer un compte</a>	
+			<a class="btn btn-outline-primary" routerLink="auth/signin">Connexion</a>
+			</li>
+			
+			<a class="btn btn-outline-primary" (click)="onsignOut()" *ngIf="isAuth" >Deconnexion</a>
+		</ul>
+	</div>
+</nav>

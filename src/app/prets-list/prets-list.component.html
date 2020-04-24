@@ -1,0 +1,45 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no book -->
+  <div class="no-data text-center" *ngIf="Pret.length == 0">
+    <p>Il n'y a pas encore de Pret, ajoutez en un !</p>
+    <button class="btn btn-outline-primary" routerLink="/create-pret">Ajouter un Pret</button>
+  </div>
+
+  <!-- Books list table, it hides when there is no book -->
+  <div *ngIf="Pret.length !== 0">
+    <h3 class="mb-3 text-center">Liste des Prets</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+           
+            <th scope="col">Date du pret</th>
+            <th scope="col">Date du retour</th>
+            <th scope="col">Livre</th>
+            <th scope="col">Adherant</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pret of Pret">
+ 
+            <td>{{pret.begin}} </td>
+            <td>{{pret.end}}</td>
+            <td>{{pret.book}}</td>
+            <td>{{pret.adherant}}</td>
+            <td> 
+              <button class="btn btn-outline-primaryedit" routerLink="/pret-edit/{{pret.idpret}}">Modifier </button>
+               <button class="btn btn-outline-primaryedit" (click)="deletePret(pret.idpret)">Supprimer</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+

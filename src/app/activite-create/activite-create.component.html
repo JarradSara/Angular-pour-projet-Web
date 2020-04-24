@@ -1,0 +1,30 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+<h5 class="my-0 mr-md-auto font-weight-normal">Gestion des Activites </h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/create-activite">Creer Activite</a>
+  </nav>
+  <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/activites-list">Liste des Activites Culturelles</a>
+</div>
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Creer une Activite Culturelle</h3>
+
+     <div class="form-group">
+      <input type="text" [(ngModel)]="activiteDetails.nomActivite" class="form-control" placeholder="Nom de l'activite culturelle  ">
+         
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="activiteDetails.descriptionActivite" class="form-control" placeholder="Description de l'activite  ">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="activiteDetails.niveauActivite" class="form-control" placeholder="Niveau demande pour l'activite  ">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addActivite(activiteDetails)">Creer l'Activite</button>
+    </div>
+
+  </div>
+</div>

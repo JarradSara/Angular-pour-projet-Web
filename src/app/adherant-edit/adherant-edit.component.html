@@ -1,0 +1,29 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    
+    <h3 class="mb-3 text-center">Update Adherant</h3>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantData.nomAdherant" class="form-control" placeholder="Nom ">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantData.prenomAdherant" class="form-control" placeholder="Prenom">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantData.ageAdherant" class="form-control" placeholder="Age">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantData.emailAdherant" class="form-control" placeholder="Email">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantData.adresseAdherant" class="form-control" placeholder="Adresse">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateAdherant()">Update Adherant</button>
+    </div>
+    
+  </div>
+</div>

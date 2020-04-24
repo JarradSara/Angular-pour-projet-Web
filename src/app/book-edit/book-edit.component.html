@@ -1,0 +1,21 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    
+    <h3 class="mb-3 text-center">Update Livre</h3>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="bookData.nomOuvrage" class="form-control" placeholder="Nom de l'ouvrage">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="bookData.nomAuteur" class="form-control" placeholder="Nom d'Auteur">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="bookData.numeroEdition" class="form-control" placeholder="Numero d'Edition">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updateBook()">Update Livre</button>
+    </div>
+    
+  </div>
+</div>

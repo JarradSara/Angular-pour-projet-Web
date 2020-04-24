@@ -1,0 +1,39 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Gestion des Adherants </h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/create-adherant">Creer Adherant</a>
+  </nav>
+  <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/adherants-list">Liste des Adherants</a>
+</div>
+<div class="container custom-container">
+  <div class="col-md-12">
+    <h3 class="mb-3 text-center">Creer un Adherant</h3>
+
+     <div class="form-group">
+      <input type="text" [(ngModel)]="adherantDetails.nomAdherant" class="form-control" placeholder="Nom ">
+         
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantDetails.prenomAdherant" class="form-control" placeholder="Prenom ">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantDetails.ageAdherant" class="form-control" placeholder="Age  ">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantDetails.emailAdherant" class="form-control" placeholder="Email  ">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="adherantDetails.adresseAdherant" class="form-control" placeholder="Adresse  ">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="addAdherant(adherantDetails)">Creer l'adherant</button>
+    </div>
+
+  </div>
+</div>
+

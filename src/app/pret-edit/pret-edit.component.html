@@ -1,0 +1,25 @@
+<div class="container custom-container">
+  <div class="col-md-12">
+    
+    <h3 class="mb-3 text-center">Update Pret</h3>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="pretData.begin" class="form-control" placeholder="Date du pret">
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="pretData.end" class="form-control" placeholder="Date du retour">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="pretData.book" class="form-control" placeholder="Nom d'Ouvrage">
+    </div>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="pretData.adherant" class="form-control" placeholder="Nom d'Adherant">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-success btn-lg btn-block" (click)="updatePret()">Update Pret</button>
+    </div>
+    
+  </div>
+</div>

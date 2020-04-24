@@ -1,0 +1,43 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no book -->
+  <div class="no-data text-center" *ngIf="Activite.length == 0">
+    <p>Il n'y a pas encore d'Activites' !</p>
+    <button class="btn btn-outline-primary" routerLink="/create-activite">Ajouter une Activite Culturelle</button>
+  </div>
+
+  <!-- Books list table, it hides when there is no book -->
+  <div *ngIf="Activite.length !== 0">
+    <h3 class="mb-3 text-center">Liste des Activites Culturelles</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+           
+            <th scope="col">Nom d'Activite</th>
+            <th scope="col">Description d'Activite</th>
+            <th scope="col">Niveau demande d'Activite</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let activite of Activite">
+            
+            <td>{{activite.nomActivite}}</td>
+            <td>{{activite.descriptionActivite}}</td>
+            <td>{{activite.niveauActivite}}</td>
+            <td>
+              <button class="btn btn-outline-primaryedit" routerLink="/activite-edit/{{activite.idActivite}}">Modifier</button>
+               <button class="btn btn-outline-primaryedit" (click)="deleteActivite(activite.idActivite)">Supprimer</button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
